@@ -19,6 +19,7 @@ return new class extends Migration
      *  'train_code' VARCHAR(30) NOT NULL,
      *  'price' DECIAML (10,2) UNSIGNED NOT NULL,
      *  'carriage_amount' SMALLINT UNSIGNED NOT NULL,
+     *  'number_of_seats_available' INT UNSIGNED,
      *  'on_time' TINYINT NOT NULL DEFAULT(1),
      *  'cancelled' TINYINT NOT NULL DEFAULT(0),
      *  'created_at' TIMESTAMP NULL,
@@ -43,6 +44,7 @@ return new class extends Migration
             $table->smallInteger('carriage_amount');
             $table->boolean('on_time')->default(true);
             $table->boolean('cancelled')->default(false);
+
             $table->timestamps();
         });
     }
