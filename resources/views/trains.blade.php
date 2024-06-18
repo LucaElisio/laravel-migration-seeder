@@ -11,6 +11,12 @@
                 <th scope="col">Agenzia</th>
                 <th scope="col">Orario Partenza</th>
                 <th scope="col">Orario Arrivo</th>
+                <th scope="col">Posti disponibili</th>
+                <th scope="col">In orario</th>
+                <th scope="col">Cancellato</th>
+
+
+
             </tr>
         </thead>
         <tbody>
@@ -22,6 +28,11 @@
                 <td>{{$train->agency}}</td>
                 <td>{{$train->departure_time}}</td>
                 <td>{{$train->arrival_time}}</td>
+                <td>{{$train->seats_available}}</td>
+                <td>{{$train->on_time ? 'in orario' : 'in ritardo'}}</td>
+                <td>{{$train->cancelled ? 'cancellato' : ''}}</td>
+
+
             </tr>
             @endforeach
         </tbody>
